@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #1e293b;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 260px;
+    height: 320px;
+    /* perspective: 1000px; */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front {
+    background-color: white;
+    color: #1e293b;
+}
+
+.card-front .icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.card-front h2 {
+    font-size: 24px;
+}
+
+.card-back {
+    background-color: #1e293b;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back h3 {
+    margin-bottom: 10px;
+}
